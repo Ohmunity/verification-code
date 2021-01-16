@@ -45,6 +45,7 @@ const App = () => {
 
 ## TODO
 
+- [ ] Add default styles and `className` support
 - [ ] Add tests
 - [ ] Add live demo
 

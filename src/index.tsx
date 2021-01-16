@@ -30,7 +30,7 @@ const VerificationCode = ({
   onChange,
   onComplete,
   Component,
-}: Props): React.ReactNode => {
+}: Props): React.ReactElement => {
   const [state, setState] = React.useState<string[]>(
     Array(total)
       .fill("")
