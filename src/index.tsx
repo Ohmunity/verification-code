@@ -17,7 +17,24 @@ type Props = {
   required?: boolean;
   onChange?: (value: string) => void;
   onComplete?: (value: string) => void;
-  Component?: React.FC | "input";
+  Component?:
+    | React.FC<{
+        key: string;
+        id: string;
+        ["data-id"]: number;
+        value: string;
+        ref: React.Ref<HTMLInputElement>;
+        type: "tel" | "text";
+        autoFocus: boolean;
+        onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+        onKeyDown: (e: KeyboardEvent<HTMLInputElement>) => void;
+        onFocus: (e: ChangeEvent<HTMLInputElement>) => void;
+        pattern?: string;
+        disabled?: boolean;
+        required?: boolean;
+        placeholder?: string;
+      }>
+    | "input";
 };
 
 const VerificationCode = ({
@@ -146,7 +163,7 @@ const VerificationCode = ({
           data-id={index}
           value={value}
           ref={refs[index]}
-          type={type === "number" ? "tel" : type}
+          type={type === "number" ? "tel" : "text"}
           pattern={type === "number" ? "[0-9]*" : undefined}
           autoFocus={index === state.findIndex((v) => v === "")}
           disabled={disabled}
