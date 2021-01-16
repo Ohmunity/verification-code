@@ -26,7 +26,20 @@ import React, { Component } from "react";
 import VerificationCode from "@ohmunity/verification-code";
 
 const App = () => {
-  return <VerificationCode type="number" total={6} />;
+  return <VerificationCode type="number" total={6} onComplete={console.log} />;
+};
+
+const CustomComponent = () => {
+  return (
+    <VerificationCode
+      type="number"
+      total={6}
+      onComplete={console.log}
+      Component={React.forwardRef((props, ref) => (
+        <FormField ref={ref} {...props} />
+      ))}
+    />
+  );
 };
 ```
 
