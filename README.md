@@ -4,6 +4,8 @@
 
 > Simple Verification Code input for ReactJS
 
+[![NPM](https://img.shields.io/npm/v/@ohmunity/verification-code.svg?style=flat-square)](https://www.npmjs.com/package/@ohmunity/verification-code) ![Minified size](https://img.shields.io/bundlephobia/min/@ohmunity/verification-code?style=flat-square) ![Minzipped size](https://img.shields.io/bundlephobia/minzip/@ohmunity/verification-code?style=flat-square) ![License](https://img.shields.io/npm/l/@ohmunity/verification-code?style=flat-square)
+
 ## Demo
 
 ![Demo](./docs/demo.gif)
