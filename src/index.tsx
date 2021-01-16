@@ -23,8 +23,8 @@ type Props = {
         id: string;
         ["data-id"]: number;
         value: string;
-        ref: React.Ref<HTMLInputElement>;
-        type: "tel" | "text";
+        forwardRef: React.Ref<HTMLInputElement>;
+        type: string;
         autoFocus: boolean;
         onChange: (e: ChangeEvent<HTMLInputElement>) => void;
         onKeyDown: (e: KeyboardEvent<HTMLInputElement>) => void;
@@ -156,24 +156,30 @@ const VerificationCode = ({
 
   return (
     <div className={`grid gap-2 grid-cols-${total}`}>
-      {state.map((value, index) => (
-        <Component
-          key={`${id}-${index}`}
-          id={id ? `${id}-${index}` : undefined}
-          data-id={index}
-          value={value}
-          ref={refs[index]}
-          type={type === "number" ? "tel" : "text"}
-          pattern={type === "number" ? "[0-9]*" : undefined}
-          autoFocus={index === state.findIndex((v) => v === "")}
-          disabled={disabled}
-          required={required}
-          placeholder={placeholder}
-          onChange={onChangeInput}
-          onKeyDown={onKeyDownInput}
-          onFocus={onFocusInput}
-        />
-      ))}
+      {state.map((value, index) => {
+        const inputProps = {
+          key: `${id}-${index}`,
+          id: id ? `${id}-${index}` : undefined,
+          "data-id": index,
+          value,
+          type: type === "number" ? "tel" : "text",
+          pattern: type === "number" ? "[0-9]*" : undefined,
+          autoFocus: index === state.findIndex((v) => v === ""),
+          disabled,
+          required,
+          placeholder,
+          onChange: onChangeInput,
+          onKeyDown: onKeyDownInput,
+          onFocus: onFocusInput,
+        };
+        const ref = refs[index];
+
+        return typeof Component == "string" ? (
+          <Component {...inputProps} ref={ref} />
+        ) : (
+          <Component {...inputProps} forwardRef={ref} />
+        );
+      })}
     </div>
   );
 };
