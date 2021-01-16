@@ -1,6 +1,6 @@
 {
   "name": "@ohmunity/verification-code",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Simple Verification Code input for ReactJS",
   "private": false,
   "main": "lib/index.js",
