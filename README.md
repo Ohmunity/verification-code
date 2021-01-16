@@ -2,8 +2,6 @@
 
 ---
 
-React Verification Code
-
 > Simple Verification Code input for ReactJS
 
 ## Demo
@@ -47,8 +45,8 @@ const App = () => {
 
 ## TODO
 
-- [] Add tests
-- [] Add live demo
+- [ ] Add tests
+- [ ] Add live demo
 
 ## License
 
