@@ -1,0 +1,54 @@
+{
+  "name": "@ohmunity/verification-code",
+  "version": "0.0.1",
+  "description": "Simple Verification Code input for ReactJS",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib || true && tsc",
+    "test": "jest",
+    "lint": "eslint --ext .ts,.tsx src",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ohmunity/verification-code.git"
+  },
+  "keywords": [
+    "verification",
+    "code",
+    "verify",
+    "pin",
+    "react",
+    "reactjs",
+    "react-component"
+  ],
+  "author": "Giuliano Kranevitter <giuliano@ohmunity.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ohmunity/verification-code/issues"
+  },
+  "homepage": "https://github.com/Ohmunity/verification-code#readme",
+  "dependencies": {
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@types/jest": "^26.0.20",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}
