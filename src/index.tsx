@@ -10,7 +10,7 @@ const KEY_CODE_MAP = {
 type Props = {
   type: "number" | "text";
   total: number;
-  values?: string[];
+  value?: string;
   id?: string;
   placeholder?: string;
   disabled?: boolean;
@@ -40,7 +40,7 @@ type Props = {
 const VerificationCode = ({
   type,
   total,
-  values,
+  value,
   disabled,
   required,
   placeholder,
@@ -48,10 +48,11 @@ const VerificationCode = ({
   onComplete,
   Component,
 }: Props): React.ReactElement => {
+  const defaultValues = value ? value.split("") : [];
   const [state, setState] = React.useState<string[]>(
     Array(total)
       .fill("")
-      .map((v, i) => values?.[i] ?? v)
+      .map((v, i) => defaultValues?.[i] ?? v)
   );
   const refs = Array(total)
     .fill(React.createRef<HTMLInputElement>())
@@ -181,7 +182,7 @@ const VerificationCode = ({
 VerificationCode.defaultProps = {
   type: "number",
   total: 6,
-  values: [],
+  value: "",
   disabled: false,
   required: false,
   placeholder: "0",

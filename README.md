@@ -28,8 +28,16 @@ import VerificationCode from "@ohmunity/verification-code";
 const App = () => {
   return <VerificationCode type="number" total={6} onComplete={console.log} />;
 };
+```
 
-const CustomComponent = () => {
+You can also Customize the input field
+
+```jsx
+import React, { Component } from "react";
+
+import VerificationCode from "@ohmunity/verification-code";
+
+const App = () => {
   return (
     <VerificationCode
       type="number"
@@ -49,7 +57,7 @@ const CustomComponent = () => {
 | ----------- | -------------------- | --------------------------------------------------- | -------- |
 | type        | "number" \| "string" | input type                                          | required |
 | total       | number               | total of digits                                     | required |
-| values      | string[]             | default values (must match "total")                 |          |
+| value       | string               | default value                                       |          |
 | id          | string               | element id                                          |          |
 | placeholder | string               | element placeholder (same for all)                  |          |
 | disabled    | boolean              | element disabled status                             |          |
