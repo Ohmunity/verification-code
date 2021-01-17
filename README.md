@@ -53,18 +53,19 @@ const App = () => {
 
 ## Props
 
-| Prop        | Type                 | Description                                         |          |
-| ----------- | -------------------- | --------------------------------------------------- | -------- |
-| type        | "number" \| "string" | input type                                          | required |
-| total       | number               | total of digits                                     | required |
-| value       | string               | default value                                       |          |
-| id          | string               | element id                                          |          |
-| placeholder | string               | element placeholder (same for all)                  |          |
-| disabled    | boolean              | element disabled status                             |          |
-| required    | boolean              | element required status                             |          |
-| onChange    | Function             | calls the function every time a field changes       |          |
-| onComplete  | Function             | call the function once all the fields are completed |          |
-| Component   | React Component      | support for custom React Component                  |          |
+| Prop               | Type                 | Description                                         |          |
+| ------------------ | -------------------- | --------------------------------------------------- | -------- |
+| type               | "number" \| "string" | input type                                          | required |
+| total              | number               | total of digits                                     | required |
+| value              | string               | default value                                       |          |
+| id                 | string               | element id                                          |          |
+| placeholder        | string               | element placeholder (same for all)                  |          |
+| disabled           | boolean              | element disabled status                             |          |
+| required           | boolean              | element required status                             |          |
+| onChange           | Function             | calls the function every time a field changes       |          |
+| onComplete         | Function             | call the function once all the fields are completed |          |
+| Component          | React Component      | support for custom React Component                  |          |
+| clearAfterComplete | boolean              | clear fields after completion                       |          |
 
 ## TODO
 

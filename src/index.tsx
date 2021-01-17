@@ -35,6 +35,7 @@ type Props = {
         placeholder?: string;
       }>
     | "input";
+  clearAfterComplete?: boolean;
 };
 
 const VerificationCode = ({
@@ -47,6 +48,7 @@ const VerificationCode = ({
   onChange,
   onComplete,
   Component,
+  clearAfterComplete,
 }: Props): React.ReactElement => {
   const defaultValues = value ? value.split("") : [];
   const [state, setState] = React.useState<string[]>(
@@ -58,6 +60,11 @@ const VerificationCode = ({
     .fill(React.createRef<HTMLInputElement>())
     .map(() => React.createRef<HTMLInputElement>());
   const id = +new Date();
+
+  const clear = () => {
+    setState(Array(total).fill(""));
+    refs[0].current.focus();
+  };
 
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     const index = parseInt(e.target.dataset.id ?? "");
@@ -110,6 +117,10 @@ const VerificationCode = ({
 
     if (onComplete && valuesStr.length >= total) {
       onComplete(valuesStr);
+
+      if (clearAfterComplete) {
+        clear();
+      }
     }
   };
 
