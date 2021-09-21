@@ -1,4 +1,5 @@
 import React, { ChangeEvent, KeyboardEvent } from "react";
+import cc from "classcat";
 
 const KEY_CODE_MAP = {
   up: 38,
@@ -167,7 +168,25 @@ const VerificationCode = ({
   };
 
   return (
-    <div className={`grid gap-2 grid-cols-${total}`}>
+    <div
+      className={cc([
+        "grid gap-2 ",
+        {
+          "grid-cols-1": total === 1,
+          "grid-cols-2": total === 2,
+          "grid-cols-3": total === 3,
+          "grid-cols-4": total === 4,
+          "grid-cols-5": total === 5,
+          "grid-cols-6": total === 6,
+          "grid-cols-7": total === 7,
+          "grid-cols-8": total === 8,
+          "grid-cols-9": total === 9,
+          "grid-cols-10": total === 10,
+          "grid-cols-11": total === 11,
+          "grid-cols-12": total === 12,
+        },
+      ])}
+    >
       {state.map((value, index) => (
         <Component
           key={`${id}-${index}`}
